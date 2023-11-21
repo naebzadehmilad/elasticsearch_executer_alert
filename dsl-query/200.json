@@ -1,0 +1,38 @@
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "@timestamp": {
+              "gte": "now-2m",
+              "lte": "now"
+            }
+          }
+        },
+        {
+          "bool": {
+            "must": [
+              {
+                "term": {
+                  "status": {
+                    "value": "200"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "filtered_hits": {
+      "top_hits": {
+        "_source": ["remote_addr", "http_referer", "time_local", "status"],
+        "size": 0
+      }
+    }
+  }
+}
