@@ -16,4 +16,4 @@ Run the script main.py with the following command-line arguments:<br />
 
 Example command:  <br />
 
-python3.8 main.py -H http://elasticsearch_ip:9200 -u USER -p PASSWORD -i *nginx* -f ./dsl-query/200.json -S -M 'alert----elasticsearch'
+python3.8 main.py -H http://elasticsearch_ip:9200 -u USER -p PASSWORD -i \*nginx\* -f ./dsl-query/200.json -S -M 'alert----elasticsearch'
